@@ -26,7 +26,7 @@ class LostItemActivity : AppCompatActivity() {
     private val dummyList: List<LostItem> = run {
         val items = arrayListOf<LostItem>()
         val imageList = arrayListOf(
-            R.drawable.img_lostitem1 to "잃어버린 제갈을 찾습니다",
+            R.drawable.img_lostitem1 to "잃어버린 제 탑을 찾습니다",
             R.drawable.img_lostitem2 to "잃어버린 제 안경 알을 찾습니다",
             R.drawable.img_lostitem3 to "잃어버린 제 허리를 찾습니다",
             R.drawable.img_lostitem4 to "잃어버린 제 맥북을 찾습니다",
