@@ -1,12 +1,13 @@
 package com.bestswlkh0310.b1nddormitorywork
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bestswlkh0310.b1nddormitorywork.Gson.gson
 import com.bestswlkh0310.b1nddormitorywork.databinding.ActivityLostItemDetailBinding
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.json.Json
+import com.google.gson.Gson
+import java.time.LocalDateTime
 
 class LostItemDetailActivity : AppCompatActivity() {
 
@@ -25,8 +26,7 @@ class LostItemDetailActivity : AppCompatActivity() {
 
     private fun loadLostItem() {
         val intent = intent
-//        Log.d("TAG", "${intent.getStringExtra("lostItem")} - loadLostItem() called")
-        lostItem = Json.decodeFromString(intent.getStringExtra("lostItem")!!)
+        lostItem = gson.fromJson(intent.getStringExtra("lostItem"), LostItem::class.java)
     }
 
     private fun initView() {

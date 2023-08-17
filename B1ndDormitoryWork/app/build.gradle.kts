@@ -47,10 +47,7 @@ android {
 }
 
 dependencies {
-    implementation("io.coil-kt:coil:2.1.0")
-
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+    implementation("com.google.code.gson:gson:2.7")
 
     implementation ("androidx.activity:activity-compose:1.4.0")
     implementation ("androidx.compose.material:material:1.1.1")

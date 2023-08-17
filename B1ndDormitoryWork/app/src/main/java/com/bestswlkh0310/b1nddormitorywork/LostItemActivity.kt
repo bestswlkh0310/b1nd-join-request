@@ -1,17 +1,14 @@
 package com.bestswlkh0310.b1nddormitorywork
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import coil.Coil.setImageLoader
-import coil.ImageLoader
-import coil.Coil;
-import coil.request.ImageRequest
+import com.bestswlkh0310.b1nddormitorywork.Gson.gson
 import com.bestswlkh0310.b1nddormitorywork.databinding.ActivityMainBinding
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
+import com.google.gson.Gson
 import java.time.LocalDateTime
 import kotlin.random.Random
 import kotlin.random.nextInt
@@ -23,7 +20,7 @@ class LostItemActivity : AppCompatActivity() {
     private lateinit var adapter: LostItemAdapter
     private lateinit var clickedLostItem: LostItem
 
-    private val dummyList: List<LostItem> = run {
+    private var dummyList: List<LostItem> = run {
         val items = arrayListOf<LostItem>()
         val imageList = arrayListOf(
             R.drawable.img_lostitem1 to "잃어버린 제 탑을 찾습니다",
@@ -77,8 +74,7 @@ class LostItemActivity : AppCompatActivity() {
 
     private fun toLostItemDetail() {
         val intent = Intent(this, LostItemDetailActivity::class.java)
-        Log.d("TAG", "$clickedLostItem - toLostItemDetail() called")
-        intent.putExtra("lostItem", Json.encodeToString(clickedLostItem))
+        intent.putExtra("lostItem", gson.toJson(clickedLostItem))
         startActivity(intent)
     }
 }

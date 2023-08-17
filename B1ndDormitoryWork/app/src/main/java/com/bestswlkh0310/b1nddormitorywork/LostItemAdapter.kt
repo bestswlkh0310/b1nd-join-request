@@ -1,5 +1,7 @@
 package com.bestswlkh0310.b1nddormitorywork
 
+import android.content.Context
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,7 +9,7 @@ import com.bestswlkh0310.b1nddormitorywork.databinding.ListLostItemBinding
 
 class LostItemAdapter(
     private val lostItemList: List<LostItem>,
-    private val onClickLostItem: (LostItem) -> Unit
+    private val onClickLostItem: (LostItem) -> Unit,
 ): RecyclerView.Adapter<LostItemAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(ListLostItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
